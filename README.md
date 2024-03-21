@@ -1,34 +1,34 @@
 
 # BUSINESS PERFORMANCE DASHBOARD
 
-### Dashboard Link : https://app.powerbi.com/groups/me/reports/2e332c44-892e-4f81-8519-323192512b54/ReportSection
+### Dashboard Link: https://app.powerbi.com/groups/me/reports/2e332c44-892e-4f81-8519-323192512b54/ReportSection
 
 ## Problem Statement
 
-This dashboard helps the company to understand their product, their sales, profit, gross sales, COGSand their otherthing better. It helps the company to know their sales in the year of 2013 and 2014 according to each month. they could also know their year over year (YoY) sales ,profit, gross sales and cogs. They can see top 3 product by segment profit with their product name sales, gross sales and sales. They can also know the sales of 2013 and 2014 according to the country.
+This dashboard helps the company to understand their product, their sales, profit, gross sales, COGSand their otherthing better. It helps the company to know their sales in the year of 2013 and 2014 according to each month. they could also know their year-over-year (YoY) sales , profit, gross sales, and cogs. They can see top 3 product by segment profit with their product name sales, gross sales and sales. They can also know the sales of 2013 and 2014 according to the country.
 By using this they can increase their productivity.
 
 
 ### Steps followed 
 
-- Step 1 : Load data into Power BI Desktop, dataset is a Excel file.
-- Step 2 : Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
+- Step 1: Load data into Power BI Desktop, the dataset is an Excel file.
+- Step 2: Open the power query editor & in the view tab under the Data preview section, and check the "column distribution", "column quality" & "column profile" options.
 - Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
-- Step 4 : It was observed that in none of the columns errors & empty values were present in the dataset.
+- Step 4: It was observed that in none of the columns errors & empty values were present in the dataset.
 - Step 5 : For calculating Total sales,Total profit,gross sales,cogs, sales by country within 2013 and 2014.
-- Step 6 : In the report view, under the view tab, theme was selected.
-- Step 7 : Since we want to see the sales according to year of 2013 and 2014 i have to extract the  date column and take only the year of 2013 and 2014 sales value and create new column using Dax. 
-for creating new column following DAX expression was written;
+- Step 6: In the report view, under the view tab, theme was selected.
+- Step 7: Since we want to see the sales according to years 2013 and 2014 I have to extract the  date column and take only the year of 2013 and 2014 sales value and create new column using Dax. 
+for creating a new column following the DAX expression was written;
     
-    Total Sales 2013 = 
-       CALCULATE(
-            SUM(financials[ Sales]),
-            YEAR(Financials[Date]) = 2013
+      Total Sales 2013 = 
+         CALCULATE(
+             SUM(financials[ Sales]),
+             YEAR(Financials[Date]) = 2013
 
-    Total Sales 2014 = 
-        CALCULATE(
-            SUM(financials[ Sales]),
-            YEAR(Financials[Date]) = 2014
+      Total Sales 2014 = 
+         CALCULATE(
+             SUM(financials[ Sales]),
+             YEAR(Financials[Date]) = 2014
 )
 )
         
